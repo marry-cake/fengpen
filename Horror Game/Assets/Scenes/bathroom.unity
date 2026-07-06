@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da5dcb971cf82648b2b35ec784271cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: game3
+  targetSceneName: hallway
 --- !u!61 &1329466268
 BoxCollider2D:
   m_ObjectHideFlags: 0

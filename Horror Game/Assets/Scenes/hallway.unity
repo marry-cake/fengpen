@@ -573,7 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da5dcb971cf82648b2b35ec784271cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: game4
+  targetSceneName: bathroom
 --- !u!61 &1928876600
 BoxCollider2D:
   m_ObjectHideFlags: 0
