@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch1 : MonoBehaviour
 {
-    public string targetSceneName = "game3";
+    public string targetSceneName = "game1";
 
     void OnMouseDown()
     {
