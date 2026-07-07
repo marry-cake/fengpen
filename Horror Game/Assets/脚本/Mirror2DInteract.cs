@@ -8,12 +8,16 @@ public class Mirror2DInteract : MonoBehaviour
     public VideoPlayer mirrorVideo;
     [Header("承载视频的RawImage")]
     public RawImage videoCanvas;
-    [Header("退出按钮")]
+    [Header("退出镜子按钮")]
     public Button closeBtn;
     [Header("看完后显示的照片面板")]
     public RawImage finalImgUI;
     [Header("照片贴图素材")]
     public Texture2D finalTex;
+
+    // 新增：退出场景按钮
+    [Header("退出场景按钮（打开镜子时禁用）")]
+    public Button exitSceneBtn;
 
     private bool watchedVideo = false;
     private bool panelActive = false;
@@ -24,6 +28,10 @@ public class Mirror2DInteract : MonoBehaviour
         videoCanvas.gameObject.SetActive(false);
         finalImgUI.gameObject.SetActive(false);
         closeBtn.gameObject.SetActive(false);
+
+        // 开局默认允许点击退出场景按钮
+        if (exitSceneBtn != null)
+            exitSceneBtn.interactable = true;
 
         if (mirrorVideo != null)
         {
@@ -39,6 +47,10 @@ public class Mirror2DInteract : MonoBehaviour
     {
         if (panelActive) return;
         panelActive = true;
+
+        // 打开镜子，禁用退出场景按钮（点不动）
+        if (exitSceneBtn != null)
+            exitSceneBtn.gameObject.SetActive(false);
 
         if (!watchedVideo)
         {
@@ -77,6 +89,10 @@ public class Mirror2DInteract : MonoBehaviour
         videoCanvas.gameObject.SetActive(false);
         finalImgUI.gameObject.SetActive(false);
         closeBtn.gameObject.SetActive(false);
-        if (mirrorVideo != null) mirrorVideo.Stop(); // 关闭面板立刻停止视频
+        if (mirrorVideo != null) mirrorVideo.Stop();
+
+        // 关闭镜子面板，恢复退出场景按钮可点击
+        if (exitSceneBtn != null)
+            exitSceneBtn.gameObject.SetActive(true); 
     }
 }
