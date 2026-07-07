@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/gift.unity
     guid: 2db92fcbca173e3459d7fc8bc2990a3c
+  - enabled: 1
+    path: Assets/Scenes/giftvideo.unity
+    guid: aa27dc447661de84691b6f7c1982b296
   m_configObjects: {}
