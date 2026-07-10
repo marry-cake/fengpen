@@ -1,10 +1,10 @@
-using UnityEngine;
+锘縰sing UnityEngine;
 
 public class KeyPick : MonoBehaviour
 {
     void OnMouseDown()
     {
-        // 点击钥匙直接拾取消失
+        // 鐐瑰嚮閽ュ寵鐩存帴鎷惧彇娑堝け
         gameObject.SetActive(false);
     }
 }

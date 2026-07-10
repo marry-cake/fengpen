@@ -1,21 +1,15 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SceneSwitchBtn : MonoBehaviour
 {
-    [Header("跳转场景名称")]
-    public string targetScene = "game1";
-    private Button btn;
+    [Header("要跳转的场景名称（和Build Settings里一致）")]
+    public string targetSceneName;
 
-    void Start()
+    // 改成 public，面板才能看见
+    public void SwitchScene()
     {
-        btn = GetComponent<Button>();
-        btn.onClick.AddListener(SwitchScene);
-    }
-
-    void SwitchScene()
-    {
-        SceneManager.LoadScene(targetScene);
+        SceneManager.LoadScene(targetSceneName);
     }
 }

@@ -93,6 +93,6 @@ public class Mirror2DInteract : MonoBehaviour
 
         // 关闭镜子面板，恢复退出场景按钮可点击
         if (exitSceneBtn != null)
-            exitSceneBtn.gameObject.SetActive(true); 
+            exitSceneBtn.gameObject.SetActive(true);
     }
 }
