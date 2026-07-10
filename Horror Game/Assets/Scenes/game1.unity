@@ -155,10 +155,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 648360880}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.001, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.5747986, y: 0}
-  m_SizeDelta: {x: 8.1496, y: 1}
+  m_AnchoredPosition: {x: 4.0747986, y: 0}
+  m_SizeDelta: {x: 9.1496, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!328 &301571970
 VideoPlayer:

@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/giftvideo.unity
     guid: aa27dc447661de84691b6f7c1982b296
+  - enabled: 1
+    path: Assets/Scenes/kitchen.unity
+    guid: fe2ba8621b393ed4095fe5e8b088c73d
   m_configObjects: {}
