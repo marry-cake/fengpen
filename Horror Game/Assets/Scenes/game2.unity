@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2424cee0aa0c746a4e9feae9d7aa16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: game2
+  targetSceneName: 
 --- !u!114 &40043663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2424cee0aa0c746a4e9feae9d7aa16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: game2
+  targetSceneName: game2
 --- !u!1 &228157487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,7 +1272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2424cee0aa0c746a4e9feae9d7aa16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: game2
+  targetSceneName: 
 --- !u!114 &393760584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1965,7 +1965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2424cee0aa0c746a4e9feae9d7aa16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: game2
+  targetSceneName: 
 --- !u!114 &873562735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2111,7 +2111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2424cee0aa0c746a4e9feae9d7aa16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: game2
+  targetSceneName: 
 --- !u!114 &934634827
 MonoBehaviour:
   m_ObjectHideFlags: 0
