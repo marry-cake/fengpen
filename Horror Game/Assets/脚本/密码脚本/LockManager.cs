@@ -45,7 +45,9 @@ public class LockManager : MonoBehaviour
         {
             tipText.text = "密码正确";
             tipText.color = Color.green;
-            // 2秒后切换面板
+            // ==========新增核心代码：标记永久解锁==========
+            GameState.Instance.lockUnlocked = true;
+            // ============================================
             StartCoroutine(SwitchPanelAfterDelay());
         }
         else
