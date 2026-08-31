@@ -9,12 +9,23 @@ public class CabinetInteract : MonoBehaviour
     public Button closeCabinetBtn;
     [Header("密码锁整套面板")]
     public GameObject lockPanel;
-    [Header("上锁抽屉图")]
-    public Image drawerImg;
-    [Header("解锁后打开抽屉图")]
-    public Sprite openDrawerSprite;
+
+    [Header("【层级物体】上锁抽屉Image")]
+    public Image drawerClosedImg;
+    [Header("【层级物体】打开抽屉Image")]
+    public Image drawerOpenImg;
+    [Header("退出打开抽屉按钮（在打开抽屉界面才显示）")]
+    public Button closeOpenDrawerBtn;
+
     [Header("抽屉点击按钮（解锁后禁用）")]
     public Button drawerBtn;
+
+    [Header("日记本按钮（放在柜子面板内部，叠在打开抽屉图日记本位置）")]
+    public Button diaryBtn;
+    [Header("日记本UI面板（Canvas下与柜子面板平级）")]
+    public GameObject diaryPanel;
+    [Header("日记本面板内关闭按钮")]
+    public Button closeDiaryBtn;
 
     private bool panelOpen = false;
     public bool drawerUnlocked = false;
@@ -23,11 +34,20 @@ public class CabinetInteract : MonoBehaviour
     {
         cabinetPanel.SetActive(false);
         lockPanel.SetActive(false);
-        // 关闭按钮全程可点击，不受解锁状态影响
+
+        drawerClosedImg.gameObject.SetActive(true);
+        drawerOpenImg.gameObject.SetActive(false);
+        closeOpenDrawerBtn.gameObject.SetActive(false);
+        diaryBtn.gameObject.SetActive(false);
+        diaryPanel.SetActive(false);
+
         closeCabinetBtn.onClick.AddListener(CloseCabinet);
+        closeOpenDrawerBtn.onClick.AddListener(ExitOpenDrawer);
+        diaryBtn.onClick.AddListener(OpenDiaryPanel);
+        closeDiaryBtn.onClick.AddListener(CloseDiaryPanel);
+        drawerBtn.onClick.AddListener(ShowLock);
     }
 
-    // 点击场景柜子，打开柜子面板
     void OnMouseDown()
     {
         if (panelOpen) return;
@@ -36,50 +56,70 @@ public class CabinetInteract : MonoBehaviour
         RefreshDrawerState();
     }
 
-    // 刷新抽屉状态
     void RefreshDrawerState()
     {
         lockPanel.SetActive(false);
         if (drawerUnlocked)
         {
-            // 切换为打开的抽屉图片
-            drawerImg.sprite = openDrawerSprite;
-            // 抽屉按钮失效，不能再点出密码
+            drawerClosedImg.gameObject.SetActive(false);
+            drawerOpenImg.gameObject.SetActive(true);
+            closeOpenDrawerBtn.gameObject.SetActive(true);
             drawerBtn.interactable = false;
-            // 关闭按钮保持可点击，不受影响
-            closeCabinetBtn.interactable = true;
+            diaryBtn.gameObject.SetActive(true);
         }
         else
         {
+            drawerClosedImg.gameObject.SetActive(true);
+            drawerOpenImg.gameObject.SetActive(false);
+            closeOpenDrawerBtn.gameObject.SetActive(false);
             drawerBtn.interactable = true;
+            diaryBtn.gameObject.SetActive(false);
         }
     }
 
-    // 点击抽屉按钮，弹出密码面板
     public void ShowLock()
     {
         if (drawerUnlocked) return;
         lockPanel.SetActive(true);
     }
 
-    // 密码正确，解锁抽屉
     public void UnlockDrawer()
     {
         if (drawerUnlocked) return;
         drawerUnlocked = true;
         lockPanel.SetActive(false);
-        drawerImg.sprite = openDrawerSprite;
-        // 抽屉按钮禁用
+
+        drawerClosedImg.gameObject.SetActive(false);
+        drawerOpenImg.gameObject.SetActive(true);
+        closeOpenDrawerBtn.gameObject.SetActive(true);
         drawerBtn.interactable = false;
-        // 关闭按钮依旧可用
-        closeCabinetBtn.interactable = true;
+        diaryBtn.gameObject.SetActive(true);
     }
 
-    // 关闭整个柜子面板（任何状态都能触发）
+    public void ExitOpenDrawer()
+    {
+        drawerClosedImg.gameObject.SetActive(true);
+        drawerOpenImg.gameObject.SetActive(false);
+        closeOpenDrawerBtn.gameObject.SetActive(false);
+        diaryBtn.gameObject.SetActive(false);
+        diaryPanel.SetActive(false);
+    }
+
+    void OpenDiaryPanel()
+    {
+        diaryPanel.SetActive(true);
+    }
+
+    void CloseDiaryPanel()
+    {
+        diaryPanel.SetActive(false);
+    }
+
     public void CloseCabinet()
     {
         panelOpen = false;
         cabinetPanel.SetActive(false);
         lockPanel.SetActive(false);
+        diaryPanel.SetActive(false);
     }
 }
