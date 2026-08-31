@@ -13,76 +13,94 @@ public class CabinetLockInteract : MonoBehaviour
     public Image drawerImg;
     [Header("解锁后打开抽屉图")]
     public Sprite openDrawerSprite;
-    [Header("抽屉点击按钮（解锁后禁用）")]
+    [Header("抽屉点击按钮（解锁前点它出密码）")]
     public Button drawerBtn;
+    [Header("解锁完成后，点击抽屉图片跳转的Panel2")]
+    public GameObject panel2;
 
     private bool panelOpen = false;
 
     void Start()
     {
-        cabinetPanel.SetActive(false);
-        lockPanel.SetActive(false);
-        closeCabinetBtn.onClick.AddListener(CloseCabinet);
-        // 启动读取全局解锁状态
+        if (cabinetPanel != null) cabinetPanel.SetActive(false);
+        if (lockPanel != null) lockPanel.SetActive(false);
+        if (panel2 != null) panel2.SetActive(false);
+
+        if (closeCabinetBtn != null)
+        {
+            closeCabinetBtn.onClick.AddListener(CloseCabinet);
+        }
         RefreshDrawerState();
     }
 
-    // 点击场景柜子，打开柜子面板 + 防UI穿透
+    //点击场景柜子物体
     void OnMouseDown()
     {
-        // 拦截UI穿透
         if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
             return;
-
         if (panelOpen) return;
+
         panelOpen = true;
-        cabinetPanel.SetActive(true);
+        if (cabinetPanel != null) cabinetPanel.SetActive(true);
         RefreshDrawerState();
     }
 
-    // 刷新抽屉状态：优先读取全局存档状态
     void RefreshDrawerState()
     {
-        lockPanel.SetActive(false);
-        bool isUnlocked = AllGameGlobal.Global.lockUnlocked;
+        if (lockPanel != null) lockPanel.SetActive(false);
+        bool isUnlocked = false;
+        if (AllGameGlobal.Global != null)
+        {
+            isUnlocked = AllGameGlobal.Global.lockUnlocked;
+        }
+
         if (isUnlocked)
         {
-            drawerImg.sprite = openDrawerSprite;
-            drawerBtn.interactable = false;
-            closeCabinetBtn.interactable = true;
+            if (drawerImg != null) drawerImg.sprite = openDrawerSprite;
+            if (drawerBtn != null) drawerBtn.interactable = false;
         }
         else
         {
-            drawerBtn.interactable = true;
+            if (drawerBtn != null) drawerBtn.interactable = true;
         }
     }
 
-    // 点击抽屉按钮，弹出密码面板
+    //点抽屉按钮，弹出密码面板（解锁前可用）
     public void ShowLock()
     {
-        if (AllGameGlobal.Global.lockUnlocked) return;
-        lockPanel.SetActive(true);
+        if (AllGameGlobal.Global == null || AllGameGlobal.Global.lockUnlocked) return;
+        if (lockPanel != null) lockPanel.SetActive(true);
     }
 
-    // 密码正确，解锁抽屉，同步全局存档状态
+    //密码正确，解锁抽屉，不跳转panel2
     public void UnlockDrawer()
     {
-        if (AllGameGlobal.Global.lockUnlocked) return;
-        // 全局标记解锁+保存
+        if (AllGameGlobal.Global == null || AllGameGlobal.Global.lockUnlocked) return;
         AllGameGlobal.Global.lockUnlocked = true;
         AllGameGlobal.Global.SaveLock();
 
-        lockPanel.SetActive(false);
-        drawerImg.sprite = openDrawerSprite;
-        drawerBtn.interactable = false;
-        closeCabinetBtn.interactable = true;
+        if (lockPanel != null) lockPanel.SetActive(false);
+        if (drawerImg != null) drawerImg.sprite = openDrawerSprite;
+        if (drawerBtn != null) drawerBtn.interactable = false;
     }
 
-    // 关闭整个柜子面板
+    public void ClickOpenedDrawerImage()
+    {
+        if (AllGameGlobal.Global == null || !AllGameGlobal.Global.lockUnlocked)
+        {
+            return;
+        }
+        //关闭柜子UI，打开panel2
+        if (cabinetPanel != null) cabinetPanel.SetActive(false);
+        panelOpen = false;
+        if (panel2 != null) panel2.SetActive(true);
+    }
+
+    //关闭柜子面板
     public void CloseCabinet()
     {
         panelOpen = false;
-        cabinetPanel.SetActive(false);
-        lockPanel.SetActive(false);
+        if (cabinetPanel != null) cabinetPanel.SetActive(false);
+        if (lockPanel != null) lockPanel.SetActive(false);
     }
 }
