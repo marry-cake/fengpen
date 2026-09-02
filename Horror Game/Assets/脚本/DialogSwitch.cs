@@ -11,7 +11,7 @@ public class DialogSwitch : MonoBehaviour
     public string nextSceneName;
 
     private int currentIndex = 0;
-    private TypeWriter typeWriter;
+    private TypeWriter1 typeWriter;
     private bool hasTextContent = false;
 
     void Start()
@@ -45,7 +45,7 @@ public class DialogSwitch : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // 还有文字在打字：一键显示全部文字
-            if (hasTextContent && !typeWriter.isFinish)
+            if (hasTextContent && typeWriter != null && !typeWriter.isFinish)
             {
                 typeWriter.ShowAllText();
             }
@@ -58,10 +58,17 @@ public class DialogSwitch : MonoBehaviour
 
     void OpenPanel(int index)
     {
+        // ?【修复】先把全部面板关闭！原来漏掉这一步
+        foreach (GameObject p in dialogPanels)
+        {
+            if (p != null) p.SetActive(false);
+        }
+
         currentIndex = index;
         GameObject nowPanel = dialogPanels[index];
         nowPanel.SetActive(true);
         hasTextContent = false;
+        typeWriter = null;
 
         // 自动播放面板视频
         VideoPlayer vp = nowPanel.GetComponentInChildren<VideoPlayer>();
@@ -69,13 +76,18 @@ public class DialogSwitch : MonoBehaviour
 
         // 读取文字打字
         Text txt = nowPanel.GetComponentInChildren<Text>();
+        Debug.Log($"【OpenPanel】当前面板:{nowPanel.name}，是否找到Text:{txt != null}");
         if (txt != null)
         {
-            typeWriter = txt.GetComponent<TypeWriter>();
+            typeWriter = txt.GetComponent<TypeWriter1>();
+            Debug.Log($"【OpenPanel】是否拿到TypeWriter1：{typeWriter != null}");
             if (typeWriter != null)
             {
                 hasTextContent = true;
-                typeWriter.StartType(txt.text);
+                // 读取Text上写死的文本，然后清空UI原始文字
+                string content = txt.text;
+                txt.text = "";
+                typeWriter.StartType(content);
             }
         }
     }

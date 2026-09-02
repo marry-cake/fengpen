@@ -15,19 +15,20 @@ public class TypeWriter : MonoBehaviour
         textUI = GetComponent<Text>();
     }
 
+    /// <summary>开启逐字打字</summary>
     public void StartType(string str)
     {
         if (textUI == null) return;
+
         fullText = str;
         currentText = "";
         textUI.text = "";
         isFinish = false;
-        timer = 0;
+        timer = 0f;
     }
 
     void Update()
     {
-        // 双重判定，为空直接跳出，不会执行后面代码报错
         if (isFinish || textUI == null || string.IsNullOrEmpty(fullText))
             return;
 
@@ -35,6 +36,7 @@ public class TypeWriter : MonoBehaviour
         if (timer >= wordSpeed)
         {
             timer = 0;
+            // 还有字符没输出
             if (currentText.Length < fullText.Length)
             {
                 currentText = fullText.Substring(0, currentText.Length + 1);
@@ -47,10 +49,21 @@ public class TypeWriter : MonoBehaviour
         }
     }
 
+    /// <summary>一键显示全部文字（点击跳过）</summary>
     public void ShowAllText()
     {
         if (textUI == null) return;
         textUI.text = fullText;
+        currentText = fullText;
+        isFinish = true;
+    }
+
+    /// <summary>清空文本</summary>
+    public void ClearText()
+    {
+        fullText = "";
+        currentText = "";
+        textUI.text = "";
         isFinish = true;
     }
 }
