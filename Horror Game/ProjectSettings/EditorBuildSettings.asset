@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/hallway.unity
     guid: 177aca341cd25214b9e01105a0edd1a1
   - enabled: 1
+    path: Assets/Scenes/end4.unity
+    guid: c0dbb985bd068d640a724624edb0f8c1
+  - enabled: 1
     path: Assets/Scenes/giftvideo.unity
     guid: aa27dc447661de84691b6f7c1982b296
   - enabled: 1
@@ -39,6 +42,9 @@ EditorBuildSettings:
     path: Assets/Scenes/bedroom.unity
     guid: 3d916ec10990d3149a0113f60ee974fe
   - enabled: 1
+    path: Assets/Scenes/end2.unity
+    guid: 9bb0e38c2a0ad304eba9a0914a17cc44
+  - enabled: 1
     path: Assets/Scenes/NO.3.unity
     guid: 76e41322b37c5504dbe44d8c1b8a5f92
   - enabled: 1
@@ -47,6 +53,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NO.2.unity
     guid: 6264770cf574c8440a993a489c7de97e
+  - enabled: 1
+    path: Assets/Scenes/end1.unity
+    guid: 25286a91c79d6c54b8f3b1432e2f0657
   - enabled: 1
     path: Assets/Scenes/b1.unity
     guid: 7c3e7d7a36391cb44b3b5ef209f13bc7
