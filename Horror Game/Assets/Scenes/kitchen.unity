@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86930c9e98bf3414fa6e44578f5b9f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snapDistance: 60
 --- !u!114 &83266302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +261,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.527}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 143, y: -18}
+  m_AnchoredPosition: {x: 231, y: 34}
   m_SizeDelta: {x: 324.34, y: 144.6578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &192562900
@@ -275,6 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86930c9e98bf3414fa6e44578f5b9f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snapDistance: 60
 --- !u!114 &192562901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,7 +395,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.527}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -66, y: -102}
+  m_AnchoredPosition: {x: -66, y: -79}
   m_SizeDelta: {x: 216.9867, y: 127.0652}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &266375508
@@ -408,6 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86930c9e98bf3414fa6e44578f5b9f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snapDistance: 60
 --- !u!114 &266375509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,6 +896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86930c9e98bf3414fa6e44578f5b9f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snapDistance: 60
 --- !u!114 &738934354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1085,6 +1089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86930c9e98bf3414fa6e44578f5b9f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snapDistance: 60
 --- !u!114 &1063959978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,6 +1409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86930c9e98bf3414fa6e44578f5b9f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snapDistance: 60
 --- !u!114 &1256594421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1611,6 +1617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86930c9e98bf3414fa6e44578f5b9f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snapDistance: 60
 --- !u!114 &1518594071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1698,7 +1705,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.527}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -25}
+  m_AnchoredPosition: {x: 100, y: -66}
   m_SizeDelta: {x: 341.2351, y: 234.6579}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1636344450
@@ -1713,6 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86930c9e98bf3414fa6e44578f5b9f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snapDistance: 60
 --- !u!114 &1636344451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2041,7 +2049,7 @@ MonoBehaviour:
   - {fileID: 1636344451}
   - {fileID: 738934354}
   - {fileID: 1518594071}
-  - {fileID: 0}
+  - {fileID: 192562901}
 --- !u!4 &2000889309
 Transform:
   m_ObjectHideFlags: 0
