@@ -552,7 +552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9afc2521d2a54e54f8c96acd2beac18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutSceneVideo: {fileID: 0}
+  cutSceneVideo: {fileID: 1921685517}
   targetSceneName: b2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
