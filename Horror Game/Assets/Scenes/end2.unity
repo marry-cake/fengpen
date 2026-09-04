@@ -200,8 +200,8 @@ Transform:
   m_GameObject: {fileID: 896532707}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0428, y: -0.0158, z: 0}
-  m_LocalScale: {x: 0.6242593, y: 0.6303718, z: 1}
+  m_LocalPosition: {x: 0.0021, y: -0.0158, z: 0}
+  m_LocalScale: {x: 0.627443, y: 0.6303718, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -686,7 +686,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2035056512}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2035056510}
+        m_TargetAssemblyTypeName: SceneSwitchBtn, Assembly-CSharp
+        m_MethodName: SwitchScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2035056512
 MonoBehaviour:
   m_ObjectHideFlags: 0
