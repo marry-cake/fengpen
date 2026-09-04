@@ -1424,7 +1424,7 @@ MonoBehaviour:
   - {fileID: 651481434}
   - {fileID: 175787395}
   - {fileID: 685734687}
-  nextSceneName: b6
+  nextSceneName: b7
 --- !u!1 &564520791
 GameObject:
   m_ObjectHideFlags: 0

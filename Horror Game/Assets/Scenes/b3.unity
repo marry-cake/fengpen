@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutSceneVideo: {fileID: 936878368}
-  targetSceneName: b5
+  targetSceneName: b4
 --- !u!1 &1680166275
 GameObject:
   m_ObjectHideFlags: 0
