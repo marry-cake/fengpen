@@ -1836,7 +1836,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 52
+    m_FontSize: 34
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -3042,7 +3042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipText: {fileID: 641069369}
   showTime: 2
-  message: "\u8FD9\u4E0A\u9762...\u600E\u4E48\u4F1A\u6709\u8840..."
+  message: "\u8FD9\u5E94\u8BE5\u5C31\u662F\u51F6\u5668\u4E86...\u6211\u4E00\u5B9A\u4F1A\u63EA\u51FA\u8FD9\u4E2A\u51F6\u624B\u7684"
 --- !u!114 &1391199159
 MonoBehaviour:
   m_ObjectHideFlags: 0
